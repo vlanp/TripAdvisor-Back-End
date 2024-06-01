@@ -35,6 +35,10 @@ app.post("/send-mail", async (req, res) => {
   }
 });
 
+app.all("*", (req, res) => {
+  res.status(404).message("This route doesn't exist");
+});
+
 app.listen(process.env.PORT, () => {
   console.log("Server started");
 });
