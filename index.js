@@ -1,6 +1,6 @@
 require("dotenv").config();
-const express = require(express);
-const cors = require(cors);
+const express = require("express");
+const cors = require("cors");
 const Mailgun = require("mailgun.js");
 const formData = require("form-data");
 
@@ -23,6 +23,7 @@ app.post("/send-mail", async (req, res) => {
       subject: subject,
       text: message,
     });
+    console.log(response);
     res.status(201).json({
       message: "Mail envoyé avec succès",
       response,
